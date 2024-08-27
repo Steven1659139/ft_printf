@@ -10,6 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
+.SILENT:
+
 LIBFT			=	Libft/libft.a
 
 SRCS 			=	ft_printf.c\
@@ -42,6 +44,7 @@ all:			$(NAME)
 
 $(NAME):		$(OBJS) $(HEADER)
 					ar rcs $(NAME) $?
+					@echo "ft_printf compilé 🐥"
 
 clean:
 				$(MAKE) clean -C ./Libft
@@ -50,5 +53,6 @@ clean:
 fclean:			clean
 					$(MAKE) fclean -C ./Libft
 					$(RM) $(NAME)
+					@echo "Dossier nettoyer...🐥"
 
 re:				fclean $(NAME)
